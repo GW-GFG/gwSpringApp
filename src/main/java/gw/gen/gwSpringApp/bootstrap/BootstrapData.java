@@ -49,7 +49,9 @@ public class BootstrapData implements CommandLineRunner {
         Book wonderfulPoetrySaved = bookRepository.save(wonderfulPoetry);
 
         gwenSaved.getBooks().add(wonderfulNovelSaved);
+        wonderfulNovelSaved.getAuthors().add(gwenSaved);
         heleneSaved.getBooks().add(wonderfulPoetrySaved);
+        wonderfulNovelSaved.getAuthors().add(heleneSaved);
 
         Publisher galinace = new Publisher();
         galinace.setPublisherName("Galinacé");
