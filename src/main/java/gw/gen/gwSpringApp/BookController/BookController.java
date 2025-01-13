@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 
 import gw.gen.gwSpringApp.services.BookService;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -18,10 +17,6 @@ public class BookController {
     }
 
     @RequestMapping("/books")
-    public String requestMethodName(@RequestParam String param) {
-        return new String();
-    }
-    
     public String getBooks(Model model) {
         model.addAttribute("books", bookService.findAll());
         return "books";
